@@ -1,1 +1,9 @@
+main {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.bg-gray-400 {
+  background-color: #ced4da; /* #ced4da - #ededed */
+}
