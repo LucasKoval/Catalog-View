@@ -1,0 +1,259 @@
+[
+{
+    "id": "1",
+    "name": "Acer Aspire E1-522",
+    "category": "Electronics",
+    "type": "Laptops",
+    "image": "AcerAspire-x2.png",
+    "cost": 7000
+},
+{
+    "id": "2",
+    "name": "Alienware 13",
+    "category": "Electronics",
+    "type": "Laptops",
+    "image": "Alienware13-x2.png",
+    "cost": 8400
+},
+{
+    "id": "3",
+    "name": "Amazon Echo Dot",
+    "category": "Electronics",
+    "type": "Smart Home",
+    "image": "AmazonEchoDot-x2.png",
+    "cost": 800
+},
+{
+    "id": "4",
+    "name": "Amazon Echo",
+    "category": "Electronics",
+    "type": "Smart Home",
+    "image": "AmazonEcho-x2.png",
+    "cost": 1000
+},
+{
+    "id": "5",
+    "name": "Android Wear",
+    "category": "Electronics",
+    "type": "Phone Accessories",
+    "image": "AndroidWear-x2.png",
+    "cost": 1600
+},
+{
+    "id": "6",
+    "name": "Beats Pro",
+    "category": "Electronics",
+    "type": "Audio",
+    "image": "BeatsPro-x2.png",
+    "cost": 1400
+},
+{
+    "id": "7",
+    "name": "Canon EOS 5D",
+    "category": "Electronics",
+    "type": "Cameras",
+    "image": "CanonEOS5D-x2.png",
+    "cost": 800
+},
+
+{
+    "id": "8",
+    "name": "Dell UP3218k",
+    "category": "Electronics",
+    "type": "Monitors & TV",
+    "image": "Dell-x2.png",
+    "cost": 1700
+},
+{
+    "id": "9",
+    "name": "Google Chromecast",
+    "category": "Electronics",
+    "type": "Monitors & TV",
+    "image": "Chromecast-x2.png",
+    "cost": 500
+},
+{
+    "id": "10",
+    "name": "GoPro Hero 4",
+    "category": "Electronics",
+    "type": "Cameras",
+    "image": "GoPro-x2.png",
+    "cost": 1000
+},
+{
+    "id": "11",
+    "name": "Instax Mini 8",
+    "category": "Electronics",
+    "type": "Cameras",
+    "image": "InstaxMini-x2.png",
+    "cost": 600
+},
+{
+    "id": "12",
+    "name": "iPad Mini",
+    "category": "Electronics",
+    "type": "Tablets & E-readers",
+    "image": "iPadMini-x2.png",
+    "cost": 2000
+},
+{
+    "id": "13",
+    "name": "iPhone 8",
+    "category": "Electronics",
+    "type": "Phones",
+    "image": "iPhone8-x2.png",
+    "cost": 6000
+},
+{
+    "id": "14",
+    "name": "Kobo Aura",
+    "category": "Electronics",
+    "type": "Tablets & E-readers",
+    "image": "KoboAura-x2.png",
+    "cost": 1000
+},
+{
+    "id": "15",
+    "name": "Lenovo Yoga Book 10",
+    "category": "Electronics",
+    "type": "Laptops",
+    "image": "LenovoYogaBook-x2.png",
+    "cost": 8000
+},
+{
+    "id": "16",
+    "name": "Lenovo Yoga Tab 3",
+    "category": "Electronics",
+    "type": "Tablets & E-readers",
+    "image": "LenovoYogaTab-x2.png",
+    "cost": 3800
+},
+{
+    "id": "17",
+    "name": "Macbook Pro",
+    "category": "Electronics",
+    "type": "Laptops",
+    "image": "MacbookPro-x2.png",
+    "cost": 14000
+},
+{
+    "id": "18",
+    "name": "Marshall Major II",
+    "category": "Electronics",
+    "type": "Audio",
+    "image": "MarshallMajorll-x2.png",
+    "cost": 4000
+},
+{
+    "id": "19",
+    "name": "Moto G5",
+    "category": "Electronics",
+    "type": "Phones",
+    "image": "MotoG5-x2.png",
+    "cost": 1200
+},
+{
+    "id": "20",
+    "name": "Nikon D300",
+    "category": "Electronics",
+    "type": "Cameras",
+    "image": "NikonD300-x2.png",
+    "cost": 600
+},
+{
+    "id": "21",
+    "name": "Nintendo 3DS",
+    "category": "Electronics",
+    "type": "Gaming",
+    "image": "Nintendo3DS-x2.png",
+    "cost": 4000
+},
+{
+    "id": "22",
+    "name": "Nintendo Switch",
+    "category": "Electronics",
+    "type": "Gaming",
+    "image": "Switch-x2.png",
+    "cost": 12000
+},
+{
+    "id": "23",
+    "name": "Parrot AR",
+    "category": "Electronics",
+    "type": "Drones",
+    "image": "ParrotAR-x2.png",
+    "cost": 5500
+},
+{
+    "id": "24",
+    "name": "Phantom 2",
+    "category": "Electronics",
+    "type": "Drones",
+    "image": "Phantom2-x2.png",
+    "cost": 5500
+},
+{
+    "id": "25",
+    "name": "Razer Blackwidow Chroma",
+    "category": "Electronics",
+    "type": "PC Accessories",
+    "image": "RazerBlackwidow-x2.png",
+    "cost": 1400
+},
+{
+    "id": "26",
+    "name": "Razer Blade Pro",
+    "category": "Electronics",
+    "type": "Laptops",
+    "image": "RazerBladePro-x2.png",
+    "cost": 8000
+},
+{
+    "id": "27",
+    "name": "Razer Naga Chroma",
+    "category": "Electronics",
+    "type": "PC Accessories",
+    "image": "RazerNaga-x2.png",
+    "cost": 900
+},
+{
+    "id": "28",
+    "name": "Samsung S8",
+    "category": "Electronics",
+    "type": "Phones",
+    "image": "SamsungS8-x2.png",
+    "cost": 4500
+},
+{
+    "id": "29",
+    "name": "Samsung Tab S2",
+    "category": "Electronics",
+    "type": "Tablets & E-readers",
+    "image": "SamsungTabS2-x2.png",
+    "cost": 3500
+},
+{
+    "id": "30",
+    "name": "Sony DSC-RX10",
+    "category": "Electronics",
+    "type": "Cameras",
+    "image": "SonyDSCRX10-x2.png",
+    "cost": 600
+},
+{
+    "id": "31",
+    "name": "Sony PS4",
+    "category": "Electronics",
+    "type": "Gaming",
+    "image": "SonyPS4-x2.png",
+    "cost": 4000
+},
+{
+    "id": "32",
+    "name": "Sony SRS-X11",
+    "category": "Electronics",
+    "type": "Audio",
+    "image": "SonySRSX11-x2.png",
+    "cost": 1200
+}
+]
