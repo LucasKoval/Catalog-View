@@ -4,6 +4,23 @@ main {
   margin-right: auto;
 }
 
+.dark-mode {
+  background-color: #6c757d !important;
+  color: white;
+}
+
 .bg-gray-400 {
   background-color: #ced4da; /* #ced4da - #ededed */
+}
+
+.banner-text {
+  font-size: 6rem;
+  color: white;
+}
+
+.shop-icon {
+  width: 36px;
+  position: absolute;
+  z-index: 1;
+  right: 16px;
 }

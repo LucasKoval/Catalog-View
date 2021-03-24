@@ -8,9 +8,9 @@ const productsController = require('../controllers/productsController');
 
 
 //----------* PRODUCTS ROUTES *----------//
-router.get('/', productsController.list);                                                                                                                                         
-router.get('/:id', productsController.detail);                                             
-
+router.get('/', productsController.getAllProducts);          
+router.post('/redeem', productsController.redeemProduct);                                                                                                                                
+                                          
 
 //----------* EXPORTS ROUTER *----------//
 module.exports = router;
