@@ -5,13 +5,27 @@ const defaults = require('../api/default');
 
 
 //----------* VARIABLES *----------//
+const userInfo = 'user/me';
 const productList = 'products';
 const redeemProduct = 'redeem';
 
 
 //----------* PRODUCTS CONTROLLER *----------//
 const productsController = {
-    getAllProducts: async (req, res, next) => {
+    index: async (req, res, next) => {
+        const user = await axios({
+            ...defaults,
+            method: 'GET',
+            url: userInfo
+        })
+        .then(response => {
+            console.log(response.data);
+            return response.data;
+        })
+        .catch(error => {
+            return console.error('ERROR FETCHING API DATA -', error);
+        })
+
         const products = await axios({
             ...defaults,
             method: 'GET',
@@ -25,7 +39,11 @@ const productsController = {
             return console.error('ERROR FETCHING API DATA -', error);
         })
 
-        res.render('index', { products });
+        res.render('index', { products, user });
+    },
+
+    search: (req, res, next) => {
+        res.redirect('/');
     },
 
     redeemProduct: async (req, res, next) => {

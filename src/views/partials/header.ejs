@@ -3,8 +3,8 @@
         <div class="container-fluid">
             <a href="/" class="navbar-brand"><img src="images\logo.svg" alt="logo"></a>
             <span class="d-flex">
-                <span class="me-3 align-self-center fs-5">Lucas Koval</span>
-                <span class="bg-gray-400 shadow p-1 ps-2 rounded-pill fw-bold">6000 <img src="images\icons\coin.svg" alt="coin"></span>
+                <span class="me-3 align-self-center fs-5"><%= user.name %></span>
+                <span class="bg-gray-400 shadow p-1 ps-2 rounded-pill fw-bold"><%= user.points %> <img src="images\icons\coin.svg" alt="coin"></span>
                 <button onclick="darkMode()" style="border-radius: 50%; background-color: #F8F9FA;" class="ms-3 p-0"><img src="/images/icons/moon.svg" alt="darkMode" style="width: 36px;"></button>
                 <!-- <button onclick="darkMode()" style="border-radius: 50%; background-color: #F8F9FA;" class="ms-3 p-0"><img src="/images/icons/moon.svg" alt="darkMode" style="width: 36px;"></button> -->
             </span>
