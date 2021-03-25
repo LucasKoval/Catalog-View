@@ -24,14 +24,12 @@ app.set('view engine', 'ejs');
 
 
 //----------* ROUTES REQUIRE *----------//
-const mainRouter = require('./routes/main');
-const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
+const usersRouter = require('./routes/users');
 
 //----------* ROUTES USE() *----------//
-app.use('/', mainRouter);
+app.use('/', productsRouter);
 app.use('/user', usersRouter);
-app.use('/products', productsRouter); 
 
 
 //----------* CATCH 404 *----------//

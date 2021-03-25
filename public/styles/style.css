@@ -1,5 +1,16 @@
+:root {
+  --primary: #0d6efd;
+  --secondary: #6c757d;
+  --success: #198754;
+  --info: #0dcaf0;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #212529;
+}
+
 main {
-  width: 90%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -23,4 +34,8 @@ main {
   position: absolute;
   z-index: 1;
   right: 16px;
+}
+
+.custom-overlay:hover {
+  background-color: var(--info);
 }
