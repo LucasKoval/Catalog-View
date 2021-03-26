@@ -6,7 +6,7 @@
     <%- include('./partials/header') %>
 
     <div class="position-relative">
-      <img src="images\header-1.png" alt="header" class="w-100">
+      <img src="images\header-2.png" alt="header" class="w-100">
       <div class="position-absolute top-50 start-0 ms-5 ps-5">
         <h1 class="banner-text">Electronics</h1>
       </div>
@@ -14,7 +14,7 @@
 
     <main class="theme">
 
-      <ul class="nav nav-pills justify-content-center mt-5 theme">
+      <ul class="nav nav-pills justify-content-center mt-5 theme mb-3" style="border-bottom: 1.5px solid rgba(0, 0, 0, 0.125);">
         <li class="nav-item">
           <p class="nav-link">16 of 32 products</p>
         </li>
@@ -39,16 +39,16 @@
         
         <% for (product of products) { %>
           <div class="col">
-            <div class="card p-3 m-3 shadow custom-overlay" style="width: 18rem;">
+            <div id="card" class="card p-3 m-3 shadow custom-card" style="width: 18rem;">
               <img src="<%= product.img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
-              <img src="/images/icons/buy-blue.svg" class="shop-icon" alt="shop">
+              <img src="/images/icons/buy-blue.svg" id="shop-icon" class="shop-icon" alt="shop">
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <h5 class="card-title"><%= product.name %></h5>
+                <li class="list-group-item pb-0 ps-0">
+                  <h5 class="card-title" style="color: black;"><%= product.name %></h5>
                   <p class="card-text text-black-50"><%= product.category %></p>
                 </li>
               </ul>
-              <div class="card-body text-center">
+              <div id="redeem" class="card-body text-center custom-overlay visually-hidden-focusable">
                 <p class="card-text"><span class="p-1 ps-2 rounded-pill fw-bold"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin"></span></p>
                 <a href="#" class="btn btn-light rounded-pill text-center">Redeem</a>
               </div>

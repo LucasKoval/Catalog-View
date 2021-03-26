@@ -15,13 +15,22 @@ main {
   margin-right: auto;
 }
 
+.card {
+  border: hidden;
+}
+
+.card > .list-group {
+  border-top: 1.5px solid rgba(0, 0, 0, 0.125) !important;
+  border-bottom: hidden !important;
+}
+
 .dark-mode {
-  background-color: #6c757d !important;
+  background-color: #1f1d1c !important;
   color: white;
 }
 
 .bg-gray-400 {
-  background-color: #ced4da; /* #ced4da - #ededed */
+  background-color: #e5e5e5; /* #ced4da - #ededed */
 }
 
 .banner-text {
@@ -36,6 +45,29 @@ main {
   right: 16px;
 }
 
-.custom-overlay:hover {
-  background-color: var(--info);
+.custom-card {
+  width: 100%;
+  background-color: white;
+  background-size: cover;
+  position: relative;
+  /* overflow: hidden; */
 }
+
+.custom-overlay:hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: var(--info); */
+  background: rgb(13, 202, 240, 0.7);
+}
+
+/* <div class="card bg-dark text-white">
+  <img src="..." class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text">Last updated 3 mins ago</p>
+  </div>
+</div> */
