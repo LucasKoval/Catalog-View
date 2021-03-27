@@ -1,3 +1,6 @@
+/*====================/
+  GLOBAL RULES
+/====================*/
 :root {
   --primary: #0d6efd;
   --secondary: #6c757d;
@@ -15,15 +18,6 @@ main {
   margin-right: auto;
 }
 
-.card {
-  border: hidden;
-}
-
-.card > .list-group {
-  border-top: 1.5px solid rgba(0, 0, 0, 0.125) !important;
-  border-bottom: hidden !important;
-}
-
 .dark-mode {
   background-color: #1f1d1c !important;
   color: white;
@@ -38,6 +32,13 @@ main {
   color: white;
 }
 
+.cost {
+  font-size: 40px;
+  color: white;
+  width: 100%;
+  margin-top: 70px;
+}
+
 .shop-icon {
   width: 36px;
   position: absolute;
@@ -50,17 +51,35 @@ main {
   background-color: white;
   background-size: cover;
   position: relative;
-  /* overflow: hidden; */
 }
 
-.custom-overlay:hover {
+.custom-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-color: var(--info); */
-  background: rgb(13, 202, 240, 0.7);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(13, 202, 240, 0.8),
+    rgba(68, 197, 243, 0.8)
+  );
+  /* background: rgb(13, 202, 240, 0.8); */
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+}
+
+/*====================/
+  CUSTOM BOOTSTRAP MODS
+/====================*/
+.card {
+  border: hidden;
+}
+
+.card > .list-group {
+  border-top: 1.5px solid rgba(0, 0, 0, 0.125) !important;
+  border-bottom: hidden !important;
 }
 
 /* <div class="card bg-dark text-white">
