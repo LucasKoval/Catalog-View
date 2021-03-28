@@ -26,6 +26,9 @@ const productsController = {
             return console.error('ERROR FETCHING API DATA -', error);
         })
 
+        const page = Number(req.query.page) || 1;
+        const limit = 16;
+        
         const products = await axios({
             ...defaults,
             method: 'GET',
@@ -38,6 +41,12 @@ const productsController = {
         .catch(error => {
             return console.error('ERROR FETCHING API DATA -', error);
         })
+
+        const count = products.length;
+        const totalPages = Math.ceil(count / limit);
+        const previousPage = page > 1 ? `http://localhost:3000/?page=${page - 1}` : null;
+        const currentPage = `http://localhost:3000/?page=${page}`;
+        const nextPage = page < totalPages ? `http://localhost:3000/?page=${page + 1}` : null;
 
         res.render('index', { products, user });
     },
