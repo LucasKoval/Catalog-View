@@ -16,64 +16,147 @@
 
     <main class="theme">
 
-      <ul class="nav nav-pills justify-content-center mt-5 theme mb-3" style="border-bottom: 1.5px solid rgba(0, 0, 0, 0.125);">
-        
+      <ul class="nav nav-pills justify-content-between mt-5 theme mb-3" style="border-bottom: 1.5px solid rgba(0, 0, 0, 0.125);">
+                  
         <li class="nav-item">
-          <p class="nav-link">16 of 32 products</p>
+          <p class="nav-link products-number-high"><%= firstProducts.length %> of <%= products.length %> products</p>
         </li>
 
         <li class="nav-item">
-          <p class="nav-link text-black-50">|</p>
+          <p class="nav-link">|</p>
         </li>
 
         <li class="nav-item">
-          <p class="nav-link text-black-50">Sort by:</p>
+          <p class="nav-link ">Sort by:</p>
         </li>
 
         <li class="nav-item mx-2">
           <a class="nav-link active bg-info bg-gradient rounded-pill" aria-current="page" href="#">Most recent</a>
         </li>
 
-        <li class="nav-item rounded-pill mx-2">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Lowest price</a>
+        <li class="nav-item mx-2">
+          <a class="nav-link disabled bg-light bg-gradient rounded-pill" href="#" tabindex="-1" aria-disabled="true">Lowest price</a>
         </li>
 
-        <li class="nav-item rounded-pill mx-2">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Highest price</a>
+        <li class="nav-item mx-2">
+          <a class="nav-link disabled bg-light bg-gradient rounded-pill" href="#" tabindex="-1" aria-disabled="true">Highest price</a>
+        </li>
+
+        <li class="nav-item">
+          <p class="nav-link">|</p>
+        </li>
+
+        <li class="nav-item">
+          <nav aria-label="Page navigation">
+            <ul class="pagination">
+              
+              <li class="page-item prev-button-high visually-hidden">
+                <a class="page-link page-button previous" aria-label="Previous">
+                  <span aria-hidden="true" style="padding-left: 2px; padding-right: 2px;">
+                    <i class="fas fa-angle-left"></i>
+                  </span>
+                </a>
+              </li>
+
+              <li class="page-item ms-2">
+                <a class="page-link page-button next" aria-label="Next">
+                  <span aria-hidden="true" style="padding-left: 2px; padding-right: 2px;">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </li>
+
+            </ul>
+          </nav>
+        </li>
+        
+      </ul>
+        
+      <div class="row align-items-center justify-content-evenly" id="firstProducts">
+        <% for (product of firstProducts) { %>
+          <div class="card p-3 m-3 shadow custom-card" style="width: 18rem;">
+            
+            <img src="<%= product.img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
+            <img src="/images/icons/buy-blue.svg" class="shop-icon" alt="shop">
+            
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item pb-0 ps-0">
+                <h5 class="card-title" style="color: black;"><%= product.name %></h5>
+                <p class="card-text text-black-50"><%= product.category %></p>
+              </li>
+            </ul>
+
+            <div class="card-body redeem text-center custom-overlay bg-overlay visually-hidden">
+              <p class="card-text">
+                <div class="p-1 ps-2 rounded-pill cost"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
+              </p>
+              <p>
+                <a href="#" class="btn btn-light rounded-pill text-center " style="width: 90%;">Redeem now</a>
+              </p>
+            </div>
+
+          </div>
+        <% } %>
+      </div>
+
+      <div class="row align-items-center justify-content-evenly visually-hidden" id="lastProducts" >
+        <% for (product of lastProducts) { %>
+          <div class="card p-3 m-3 shadow custom-card" style="width: 18rem;">
+            
+            <img src="<%= product.img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
+            <img src="/images/icons/buy-blue.svg" class="shop-icon" alt="shop">
+            
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item pb-0 ps-0">
+                <h5 class="card-title" style="color: black;"><%= product.name %></h5>
+                <p class="card-text text-black-50"><%= product.category %></p>
+              </li>
+            </ul>
+
+            <div class="card-body redeem text-center custom-overlay bg-overlay visually-hidden" >
+              <p class="card-text">
+                <div class="p-1 ps-2 rounded-pill cost"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
+              </p>
+              <p>
+                <a href="#" class="btn btn-light rounded-pill text-center " style="width: 90%;">Redeem now</a>
+              </p>
+            </div>
+
+          </div>
+        <% } %>
+      </div>
+
+      <ul class="nav nav-pills justify-content-between mt-5 theme mb-3" style="border-bottom: 1.5px solid rgba(0, 0, 0, 0.125);">
+        
+        <li class="nav-item">
+          <p class="nav-link products-number-low"><%= firstProducts.length %> of <%= products.length %> products</p>
+        </li>
+
+        <li class="nav-item">
+          <nav aria-label="Page navigation">
+            <ul class="pagination">
+              
+              <li class="page-item prev-button-low visually-hidden">
+                <a class="page-link page-button previous" aria-label="Previous">
+                  <span aria-hidden="true" style="padding-left: 2px; padding-right: 2px;">
+                    <i class="fas fa-angle-left"></i>
+                  </span>
+                </a>
+              </li>
+
+              <li class="page-item ms-2">
+                <a class="page-link page-button next" aria-label="Next">
+                  <span aria-hidden="true" style="padding-left: 2px; padding-right: 2px;">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </li>
+
+            </ul>
+          </nav>
         </li>
 
       </ul>
-
-      <div class="row align-items-center justify-content-evenly">
-        
-        <% for (product of products) { %>
-          <!-- <div class="col"> -->
-            <div class="card p-3 m-3 shadow custom-card " style="width: 18rem;">
-              
-              <img src="<%= product.img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
-              <img src="/images/icons/buy-blue.svg" class="shop-icon" alt="shop">
-              
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item pb-0 ps-0">
-                  <h5 class="card-title" style="color: black;"><%= product.name %></h5>
-                  <p class="card-text text-black-50"><%= product.category %></p>
-                </li>
-              </ul>
-
-              <div class="card-body redeem text-center custom-overlay bg-overlay visually-hidden" >
-                <p class="card-text">
-                  <div class="p-1 ps-2 rounded-pill cost"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
-                </p>
-                <p>
-                  <a href="#" class="btn btn-light rounded-pill text-center " style="width: 90%;">Redeem now</a>
-                </p>
-              </div>
-
-            </div>
-         <!--  </div> -->
-        <% } %>
-
-      </div>
 
     </main>
     
