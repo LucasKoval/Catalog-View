@@ -19,7 +19,8 @@ main {
 }
 
 .dark-mode {
-  background-color: #1f1d1c !important;
+  background-color: #34495e !important; /* #1f1d1c - #34495e */
+  transition: background 1s;
   color: white;
 }
 
@@ -34,6 +35,11 @@ main {
 
 .top-60 {
   top: 60% !important;
+}
+
+.page-button {
+  border-radius: 50% !important;
+  color: var(--secondary);
 }
 
 .cost {
