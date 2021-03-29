@@ -50,10 +50,18 @@ main {
 }
 
 .shop-icon {
-  width: 36px;
   position: absolute;
   z-index: 1;
   right: 16px;
+}
+
+.no-shop-icon {
+  position: absolute;
+  background-color: rgba(33, 37, 41, 0.6);
+  color: white;
+  z-index: 1;
+  right: 16px;
+  font-family: sans-serif;
 }
 
 .custom-card {

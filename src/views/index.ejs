@@ -77,8 +77,15 @@
           <div class="card p-3 m-3 shadow custom-card" style="width: 18rem;">
             
             <img src="<%= product.img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
-            <img src="/images/icons/buy-blue.svg" class="shop-icon" alt="shop">
+            <!-- <img src="/images/icons/buy-blue.svg" class="shop-icon" alt="shop"> -->
             
+            <% if (product.cost > user.points) { %>
+              <span class="p-1 ps-3 rounded-pill fw-bold no-shop-icon">You need <%= product.cost - user.points %> <img src="images\icons\coin.svg" alt="coin"></span>
+            <% } else { %>
+              <img src="/images/icons/buy-blue.svg" class="shop-icon" alt="shop">
+            <% } %>
+
+
             <ul class="list-group list-group-flush">
               <li class="list-group-item pb-0 ps-0">
                 <h5 class="card-title" style="color: black;"><%= product.name %></h5>

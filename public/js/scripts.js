@@ -45,16 +45,32 @@ window.addEventListener("load",function(){
     }
 
     for (let i = 0; i < card.length; i++) {
-        card[i].addEventListener('mouseenter', () => {
-            redeem[i].classList.remove("visually-hidden");
-            card[i].classList.add("move-up");
-            shopIcon[i].src = '/images/icons/buy-white.svg'
-        });
-
-        card[i].addEventListener('mouseleave', () => {
-            redeem[i].classList.add("visually-hidden");
-            card[i].classList.remove("move-up");
-            shopIcon[i].src = '/images/icons/buy-blue.svg'
-        });
+        
+        /* if (shopIcon[i]) {
+            card[i].addEventListener('mouseenter', () => {
+                redeem[i].classList.remove("visually-hidden");
+                card[i].classList.add("move-up");
+                shopIcon[i].src = '/images/icons/buy-white.svg'
+            });
+    
+            card[i].addEventListener('mouseleave', () => {
+                redeem[i].classList.add("visually-hidden");
+                card[i].classList.remove("move-up");
+                shopIcon[i].src = '/images/icons/buy-blue.svg'
+            });
+        } else { */
+            card[i].addEventListener('mouseenter', () => {
+                redeem[i].classList.remove("visually-hidden");
+                card[i].classList.add("move-up");
+                /* shopIcon[i].src = '/images/icons/buy-white.svg' */
+            });
+    
+            card[i].addEventListener('mouseleave', () => {
+                redeem[i].classList.add("visually-hidden");
+                card[i].classList.remove("move-up");
+                /* shopIcon[i].src = '/images/icons/buy-blue.svg' */
+            });
+        /* } */
+        
     }
 });
