@@ -27,7 +27,7 @@
         </li>
 
         <li class="nav-item">
-          <p class="nav-link ">Sort by:</p>
+          <p class="nav-link">Sort by:</p>
         </li>
 
         <li class="nav-item mx-2">
@@ -73,64 +73,131 @@
       </ul>
         
       <div class="row align-items-center justify-content-evenly" id="firstProducts">
+        
         <% for (product of firstProducts) { %>
-          <div class="card p-3 m-3 shadow custom-card" style="width: 18rem;">
-            
-            <img src="<%= product.img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
-            <!-- <img src="/images/icons/buy-blue.svg" class="shop-icon" alt="shop"> -->
+          
+          <div class="card p-3 m-3 shadow custom-card allowedItems" style="width: 18rem;">
             
             <% if (product.cost > user.points) { %>
+              
+              <img src="<%= product.img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
               <span class="p-1 ps-3 rounded-pill fw-bold no-shop-icon">You need <%= product.cost - user.points %> <img src="images\icons\coin.svg" alt="coin"></span>
+            
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item pb-0 ps-0">
+                  <h5 class="card-title" style="color: black;"><%= product.name %></h5>
+                  <p class="card-text text-black-50"><%= product.category %></p>
+                </li>
+              </ul>
+
+              <div class="card-body redeem text-center custom-overlay-red bg-overlay visually-hidden">
+                <p class="card-text">
+                  <div class="p-1 ps-2 rounded-pill cost"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
+                </p>
+                <p>
+                  <a class="btn btn-light rounded-pill text-center " style="width: 90%;">Insufficient points</a>
+                </p>
+              </div>
+
             <% } else { %>
-              <img src="/images/icons/buy-blue.svg" class="shop-icon" alt="shop">
+              
+              <div class="allowedItems">
+                
+                <img src="<%= product.img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
+                <img src="/images/icons/buy-blue.svg" class="shop-icon" alt="shop">
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item pb-0 ps-0">
+                    <h5 class="card-title" style="color: black;"><%= product.name %></h5>
+                    <p class="card-text text-black-50"><%= product.category %></p>
+                  </li>
+                </ul>
+
+                <div class="card-body redeem text-center custom-overlay-blue bg-overlay visually-hidden">
+                  <p class="card-text">
+                    <div class="p-1 ps-2 rounded-pill cost"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
+                  </p>
+                  <p>
+                    <form action="/redeem" method="POST" enctype="multipart/form-data">
+                      <input type="text" name="id" value="<%= product._id %>" hidden selected>
+                      <input type="text" name="name" value="<%= product.name %>" hidden selected>
+                      <input type="submit" value="Redeem now" class="btn btn-light rounded-pill text-center " style="width: 90%;">
+                    </form>
+                  </p>
+                </div>
+
+              </div>
+
             <% } %>
 
-
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item pb-0 ps-0">
-                <h5 class="card-title" style="color: black;"><%= product.name %></h5>
-                <p class="card-text text-black-50"><%= product.category %></p>
-              </li>
-            </ul>
-
-            <div class="card-body redeem text-center custom-overlay bg-overlay visually-hidden">
-              <p class="card-text">
-                <div class="p-1 ps-2 rounded-pill cost"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
-              </p>
-              <p>
-                <a href="#" class="btn btn-light rounded-pill text-center " style="width: 90%;">Redeem now</a>
-              </p>
-            </div>
-
           </div>
+
         <% } %>
+
       </div>
 
-      <div class="row align-items-center justify-content-evenly visually-hidden" id="lastProducts" >
+      <div class="row align-items-center justify-content-evenly" id="lastProducts">
+        
         <% for (product of lastProducts) { %>
-          <div class="card p-3 m-3 shadow custom-card" style="width: 18rem;">
+          
+          <div class="card p-3 m-3 shadow custom-card allowedItems" style="width: 18rem;">
             
-            <img src="<%= product.img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
-            <img src="/images/icons/buy-blue.svg" class="shop-icon" alt="shop">
+            <% if (product.cost > user.points) { %>
+              
+              <img src="<%= product.img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
+              <span class="p-1 ps-3 rounded-pill fw-bold no-shop-icon">You need <%= product.cost - user.points %> <img src="images\icons\coin.svg" alt="coin"></span>
             
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item pb-0 ps-0">
-                <h5 class="card-title" style="color: black;"><%= product.name %></h5>
-                <p class="card-text text-black-50"><%= product.category %></p>
-              </li>
-            </ul>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item pb-0 ps-0">
+                  <h5 class="card-title" style="color: black;"><%= product.name %></h5>
+                  <p class="card-text text-black-50"><%= product.category %></p>
+                </li>
+              </ul>
 
-            <div class="card-body redeem text-center custom-overlay bg-overlay visually-hidden" >
-              <p class="card-text">
-                <div class="p-1 ps-2 rounded-pill cost"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
-              </p>
-              <p>
-                <a href="#" class="btn btn-light rounded-pill text-center " style="width: 90%;">Redeem now</a>
-              </p>
-            </div>
+              <div class="card-body redeem text-center custom-overlay-red bg-overlay visually-hidden">
+                <p class="card-text">
+                  <div class="p-1 ps-2 rounded-pill cost"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
+                </p>
+                <p>
+                  <a class="btn btn-light rounded-pill text-center " style="width: 90%;">Insufficient points</a>
+                </p>
+              </div>
+
+            <% } else { %>
+              
+              <div class="allowedItems">
+                
+                <img src="<%= product.img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
+                <img src="/images/icons/buy-blue.svg" class="shop-icon" alt="shop">
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item pb-0 ps-0">
+                    <h5 class="card-title" style="color: black;"><%= product.name %></h5>
+                    <p class="card-text text-black-50"><%= product.category %></p>
+                  </li>
+                </ul>
+
+                <div class="card-body redeem text-center custom-overlay-blue bg-overlay visually-hidden">
+                  <p class="card-text">
+                    <div class="p-1 ps-2 rounded-pill cost"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
+                  </p>
+                  <p>
+                    <form action="/redeem" method="POST" enctype="multipart/form-data">
+                      <input type="text" name="id" value="<%= product._id %>" hidden selected>
+                      <input type="text" name="name" value="<%= product.name %>" hidden selected>
+                      <input type="submit" value="Redeem now" class="btn btn-light rounded-pill text-center " style="width: 90%;">
+                    </form>
+                  </p>
+                </div>
+                
+              </div>
+
+            <% } %>
 
           </div>
+
         <% } %>
+
       </div>
 
       <ul class="nav nav-pills justify-content-between mt-5 theme mb-3" style="border-bottom: 1.5px solid rgba(0, 0, 0, 0.125);">

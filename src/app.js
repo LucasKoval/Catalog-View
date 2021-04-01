@@ -4,6 +4,7 @@ const createError = require('http-errors');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const cors = require('cors');
 
 //----------* MIDDLEWARES REQUIRE *----------//
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 
 //----------* VIEW ENGINE SETUP *----------//
 app.set('views', path.join(__dirname, 'views'));

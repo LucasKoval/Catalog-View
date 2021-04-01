@@ -7,11 +7,55 @@
             </a>
             
             <span class="d-flex">
-                <span class="me-3 align-self-center fs-5"><%= user.name %></span>
-                <span class="bg-gray-400 p-1 ps-3 rounded-pill fw-bold" style="color: black;"><%= user.points %> <img src="images\icons\coin.svg" alt="coin"></span>
-                <button onclick="darkMode()" style="border-radius: 50%; background-color: #F8F9FA;" class="ms-3 p-0">
+                
+                <span class="bg-gray-400 p-1 ps-3 rounded-pill fw-bold me-3" style="color: black;"><%= user.points %> <img src="images\icons\coin.svg" alt="coin"></span>
+                
+                <div class="btn-group">
+                    <button type="button" class="btn btn-light"><%= user.name %></button>
+                    <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split me-3" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        
+                        <li>
+                            <a class="dropdown-item" href="#">Profile</a>
+                        </li>
+                        
+                        <li>
+                            <a class="dropdown-item displayFlex" href="#">Add points</a>
+                            
+                            <aside class="modal">
+                                <div class="modal-content">
+                                    ¿ Cuantos puntos desea agregar ?
+                                    <form action="/user/points/1000" method="POST" enctype="multipart/form-data"> 
+                                        <button type="submit" class="btn btn-warning">1000</button>
+                                        <!-- <button type="submit" class="btn btn-warning">5000</button>
+                                        <button type="submit" class="btn btn-warning">7500</button> -->
+                                    </form>
+                                    <button class="salir btn btn-danger">Salir</button>
+                                </div> 
+                            </aside>
+                        </li>
+                        
+                        <li>
+                            <a class="dropdown-item" href="#">Redeem history</a>
+                        </li>
+                        
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        
+                        <li>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <button onclick="darkMode()" style="border-radius: 50%; background-color: #F8F9FA;" class="p-0">
                     <img src="/images/icons/DarkMode.png" alt="darkMode" style="width: 36px;">
                 </button>
+
             </span>
 
         </div>

@@ -6,7 +6,7 @@ const defaults = require('../api/default');
 
 //----------* VARIABLES *----------//
 const userInfo = 'user/me';
-const addPoints = 'points';
+const addPoints = 'user/points';
 const userHistory = 'user/history';
 
 
@@ -29,15 +29,18 @@ const usersController = {
         res.render('index', { user });
     },
 
-    addPoints: async (req, res, next) => {
+    addPoints1000: async (req, res, next) => {
+        console.log('Entra');
         await axios({
             ...defaults,
             method: 'POST',
-            url: addPoints
+            url: addPoints,
+            data: {
+                amount: 1000,
+            }
         })
         .then(response => {
-            console.log(response.data);
-            return response.data;
+            console.log(`RESULT:${response.data}`);
         })
         .catch(error => {
             return console.error('ERROR FETCHING API DATA -', error);
