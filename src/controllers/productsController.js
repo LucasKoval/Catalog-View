@@ -32,7 +32,7 @@ const productsController = {
             url: productList,
         })
         .then(response => {
-            console.log(response.data);
+            /* console.log(response.data); */
             return response.data;
         })
         .catch(error => {
@@ -67,18 +67,41 @@ const productsController = {
     },
 
     redeemProduct: async (req, res, next) => {
-        await axios({
+        const products = await axios({
             ...defaults,
-            method: 'POST',
-            url: redeemProduct
+            method: 'GET',
+            url: productList,
         })
         .then(response => {
-            console.log(response.data);
+            /* console.log(response.data); */
             return response.data;
         })
         .catch(error => {
             return console.error('ERROR FETCHING API DATA -', error);
         })
+
+        console.log(`RESULT Body:${req.body.id}`);
+        console.log(`RESULT Body:${req.body.name}`);
+
+
+
+        /* const product = products.find(element => element._id == req.body._id);
+        console.log(`RESULT:${product}`); */
+        
+        /* await axios({
+            ...defaults,
+            method: 'POST',
+            url: redeemProduct,
+            data: {
+                productId: req.body.id
+            }
+        })
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(error => {
+            return console.error('ERROR FETCHING API DATA -', error);
+        }) */
 
         return res.redirect('/');
     }
