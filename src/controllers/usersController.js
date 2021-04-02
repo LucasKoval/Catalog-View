@@ -29,8 +29,24 @@ const usersController = {
         res.render('index', { user });
     },
 
+    userHistory: async (req, res, next) => {
+        const history = await axios({
+            ...defaults,
+            method: 'GET',
+            url: userHistory
+        })
+        .then(response => {
+            console.log(response.data);
+            return response.data;
+        })
+        .catch(error => {
+            return console.error('ERROR FETCHING API DATA -', error);
+        })
+
+        res.json( history)
+    },
+
     addPoints1000: async (req, res, next) => {
-        console.log('Entra');
         await axios({
             ...defaults,
             method: 'POST',
@@ -49,21 +65,42 @@ const usersController = {
         return res.redirect('/');
     },
 
-    userHistory: async (req, res, next) => {
-        const history = await axios({
+    addPoints5000: async (req, res, next) => {
+        await axios({
             ...defaults,
-            method: 'GET',
-            url: userHistory
+            method: 'POST',
+            url: addPoints,
+            data: {
+                amount: 5000,
+            }
         })
         .then(response => {
-            console.log(response.data);
-            return response.data;
+            console.log(`RESULT:${response.data}`);
         })
         .catch(error => {
             return console.error('ERROR FETCHING API DATA -', error);
         })
 
-        res.render('index', { history });
+        return res.redirect('/');
+    },
+
+    addPoints7500: async (req, res, next) => {
+        await axios({
+            ...defaults,
+            method: 'POST',
+            url: addPoints,
+            data: {
+                amount: 7500,
+            }
+        })
+        .then(response => {
+            console.log(`RESULT:${response.data}`);
+        })
+        .catch(error => {
+            return console.error('ERROR FETCHING API DATA -', error);
+        })
+
+        return res.redirect('/');
     }
 }
 

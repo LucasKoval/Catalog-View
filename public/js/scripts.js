@@ -1,31 +1,14 @@
-// Dark Mode
-function darkMode() {
-    const body = document.body;
-    const theme = document.querySelector(".theme");
-    body.classList.toggle("dark-mode");
-    theme.classList.toggle("dark-mode");
-}
-function darkTheme() {
-    const theme = document.querySelector(".theme");
-    theme.classList.toggle("dark-mode");
-}
-
-// Redeem
 window.addEventListener("load",function(){
-    const card = document.querySelectorAll("div.card");
-    const redeem = document.querySelectorAll(".redeem");
-    const shopIcon = document.querySelectorAll(".shop-icon");
+    // Pagination
     const previous = document.querySelectorAll(".previous");
     const next = document.querySelectorAll(".next");
     const firstProducts = document.querySelector("#firstProducts");
     const lastProducts = document.querySelector("#lastProducts");
-    const allowedItems = document.querySelectorAll(".card .allowedItems")
     const prevButtonHigh = document.querySelector(".prev-button-high");
     const prevButtonLow = document.querySelector(".prev-button-low");
     const productsNumberHigh = document.querySelector(".products-number-high");
     const productsNumberLow = document.querySelector(".products-number-low");
-    
-    // Pagination
+
     for (let i = 0; i < previous.length; i++) {
         previous[i].addEventListener('click', () => {
             firstProducts.classList.remove("visually-hidden");
@@ -47,6 +30,9 @@ window.addEventListener("load",function(){
     }
 
     // Overlay
+    const card = document.querySelectorAll("div.card");
+    const redeem = document.querySelectorAll(".redeem");
+
     for (let i = 0; i < card.length; i++) {
         card[i].addEventListener('mouseenter', () => {
             redeem[i].classList.remove("visually-hidden");
@@ -60,6 +46,9 @@ window.addEventListener("load",function(){
     }
 
     // Shop icon
+    const allowedItems = document.querySelectorAll(".card .allowedItems");
+    const shopIcon = document.querySelectorAll(".shop-icon");
+
     for (let i = 0; i < allowedItems.length; i++) {
         allowedItems[i].addEventListener('mouseenter', () => {
             shopIcon[i].src = '/images/icons/buy-white.svg'
@@ -70,42 +59,37 @@ window.addEventListener("load",function(){
         });
     }
 
+    // Modal
+    const modalTrigger = document.querySelector("button.modal-trigger");
+    const modal = document.querySelector("div.modal");
+    const modalContent = document.querySelector("div.modal-content");
+    const exit = document.querySelector("button.exit");   
+    const displayFlex = (element) => { element.style.display = "flex" }
+    const displayBlock = (element) => { element.style.display = "block" }
+    const displayNone = (element ) => { element.style.display = "none" }
+    const modalBlur = (element) => { element.style.backdropFilter = "blur(10px)" }
 
-    let button = document.querySelector("button.salir");
-    let alert = document.querySelector(".modal-content");
-    let modal = document.querySelector(".modal");
-    let buttonFlex = document.querySelector("a.displayFlex");
-
-    let modalBlur =(element)=>{
-        return element.style.backdropFilter="blur(10px)"
-    }
-
-    let modalBlock =(element)=>{
-        return element.style.display="block"
-    }
-
-    let displayFlex =(element)=>{
-        return element.style.display="flex"
-    }
-
-    let displayNone = (element )=>{
-        return  element.style.display="none"
-    }
-
-    let modalNone = (element )=>{
-        element.style.display="none"
-        return  element.style.backdropFilter="none"
-    }
-
-    buttonFlex.addEventListener("click",function(){
-        modalBlur(modal)
-        modalBlock(alert)
+    modalTrigger.addEventListener("click",function(){
         displayFlex(modal)
+        displayBlock(modalContent)
+        modalBlur(modal)
     });
 
-    button.addEventListener("click",function(){
-        displayNone(alert)
-        modalNone(modal)
+    exit.addEventListener("click",function(){
+        displayNone(modal)
+        displayNone(modalContent)
     });
-
 });
+
+// Dark Mode
+function darkMode() {
+    const body = document.body;
+    const theme = document.querySelector(".theme");
+    body.classList.toggle("dark-mode");
+    theme.classList.toggle("dark-mode");
+}
+
+function darkTheme() {
+    const theme = document.querySelector(".theme");
+    theme.classList.toggle("dark-mode");
+}

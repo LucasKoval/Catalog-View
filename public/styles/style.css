@@ -18,75 +18,46 @@ main {
   margin-right: auto;
 }
 
+/*=== General ===*/
+.bg-gray-400 {
+  background-color: #e5e5e5;
+}
+.banner-text {
+  font-size: 6vw;
+  color: white;
+}
+.top-60 {
+  top: 60% !important;
+}
+.page-button {
+  border-radius: 50% !important;
+  color: var(--secondary);
+}
+
+/*=== Dark Mode ===*/
 .dark-mode {
   background-color: #34495e !important; /* #1f1d1c - #34495e */
   transition: background 1s;
   color: white;
 }
 
+/*=== Modal ===*/
 .modal {
-  backdrop-filter: blur(10px);
   justify-content: center;
   align-items: center;
 }
-
-.modal .modal-content {
-  max-width: 460px;
-  padding: 30px;
+.modal-header {
+  background: #34495e;
+  color: #fff;
+}
+.modal .modal-body {
+  height: 85px;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.modal .modal-content button {
-  margin: 30px 25px 5px 25px;
-}
-
-.bg-gray-400 {
-  background-color: #e5e5e5;
-}
-
-.banner-text {
-  font-size: 6vw;
-  color: white;
-}
-
-.top-60 {
-  top: 60% !important;
-}
-
-.page-button {
-  border-radius: 50% !important;
-  color: var(--secondary);
-}
-
-.cost {
-  font-size: 40px;
-  color: white;
-  width: 100%;
-  margin-top: 70px;
-}
-
-.shop-icon {
-  position: absolute;
-  z-index: 1;
-  right: 16px;
-}
-
-.no-shop-icon {
-  position: absolute;
-  background-color: rgba(33, 37, 41, 0.6);
-  color: white;
-  z-index: 1;
-  right: 16px;
-  font-family: sans-serif;
-}
-
-.custom-card {
-  width: 100%;
-  background-color: white;
-  background-size: cover;
-  position: relative;
-}
-
+/*=== Cards ===*/
 .custom-overlay-blue {
   position: absolute;
   top: 0;
@@ -119,6 +90,35 @@ main {
   align-self: center;
   justify-content: center;
   border-radius: 0.25rem;
+}
+
+.custom-card {
+  width: 100%;
+  background-color: white;
+  background-size: cover;
+  position: relative;
+}
+
+.shop-icon {
+  position: absolute;
+  z-index: 1;
+  right: 16px;
+}
+
+.no-shop-icon {
+  position: absolute;
+  background-color: rgba(33, 37, 41, 0.6);
+  color: white;
+  z-index: 1;
+  right: 16px;
+  font-family: sans-serif;
+}
+
+.cost {
+  font-size: 40px;
+  color: white;
+  width: 100%;
+  margin-top: 70px;
 }
 
 .move-up {
