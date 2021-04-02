@@ -10,7 +10,8 @@ const productsController = require('../controllers/productsController');
 //----------* PRODUCTS ROUTES *----------//
 router.get('/', productsController.index);
 router.get('/search', productsController.search);        
-router.post('/redeem', productsController.redeemProduct);            
+router.get('/:id', productsController.redeemProduct);
+/* router.post('/reddem', productsController.redeemProduct); */            
          
 
 //----------* EXPORTS ROUTER *----------//

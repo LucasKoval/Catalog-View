@@ -118,9 +118,12 @@
                     <div class="p-1 ps-2 rounded-pill cost"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
                   </p>
                   <p>
-                    <form action="/redeem" method="POST" enctype="multipart/form-data">
-                      <input type="text" name="id" value="<%= product._id %>" hidden selected>
-                      <input type="text" name="name" value="<%= product.name %>" hidden selected>
+                    <form action="/<%= product._id %>" method="GET" enctype="multipart/form-data">
+                    <!-- <form action="/redeem" method="POST" enctype="multipart/form-data">
+                      <input type="text" name="_id" id="_id" value="<%= product._id %>" hidden>
+                      <input type="text" name="name" id="name" value="<%= product.name %>" hidden>
+                      <input type="number" name="cost" id="cost" value="<%= product.cost %>" hidden>
+                      <input type="text" name="category" id="category" value="<%= product.category %>" hidden> -->
                       <input type="submit" value="Redeem now" class="btn btn-light rounded-pill text-center " style="width: 90%;">
                     </form>
                   </p>
@@ -182,9 +185,9 @@
                     <div class="p-1 ps-2 rounded-pill cost"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
                   </p>
                   <p>
-                    <form action="/redeem" method="POST" enctype="multipart/form-data">
-                      <input type="text" name="id" value="<%= product._id %>" hidden selected>
-                      <input type="text" name="name" value="<%= product.name %>" hidden selected>
+                    <form action="/<%= product._id %>" method="POST" enctype="multipart/form-data">
+                      <!-- <input type="text" name="id" value="<%= product._id %>" hidden selected>
+                      <input type="text" name="name" value="<%= product.name %>" hidden selected> -->
                       <input type="submit" value="Redeem now" class="btn btn-light rounded-pill text-center " style="width: 90%;">
                     </form>
                   </p>
