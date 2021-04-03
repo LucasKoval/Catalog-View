@@ -1,7 +1,6 @@
 //----------* REQUIRE'S *----------//
 const axios = require('axios');
 const defaults = require('../api/default');
-/* const apiCall = require('../api/apiCall'); */
 
 
 //----------* VARIABLES *----------//
@@ -12,38 +11,32 @@ const userHistory = 'user/history';
 
 //----------* USERS CONTROLLER *----------//
 const usersController = {
-    userInfo: async (req, res, next) => {
+    profile: async (req, res, next) => {
         const user = await axios({
             ...defaults,
             method: 'GET',
             url: userInfo
         })
         .then(response => {
-            console.log(response.data);
             return response.data;
         })
         .catch(error => {
             return console.error('ERROR FETCHING API DATA -', error);
         })
 
-        res.render('index', { user });
-    },
-
-    userHistory: async (req, res, next) => {
         const history = await axios({
             ...defaults,
             method: 'GET',
             url: userHistory
         })
         .then(response => {
-            console.log(response.data);
             return response.data;
         })
         .catch(error => {
             return console.error('ERROR FETCHING API DATA -', error);
         })
 
-        res.json( history)
+        res.render('users/profile', { user, history });
     },
 
     addPoints1000: async (req, res, next) => {
@@ -56,13 +49,13 @@ const usersController = {
             }
         })
         .then(response => {
-            console.log(`RESULT:${response.data}`);
+            console.log(response.data);
         })
         .catch(error => {
             return console.error('ERROR FETCHING API DATA -', error);
         })
 
-        return res.redirect('/');
+        return res.redirect('/user/profile');
     },
 
     addPoints5000: async (req, res, next) => {
@@ -75,13 +68,13 @@ const usersController = {
             }
         })
         .then(response => {
-            console.log(`RESULT:${response.data}`);
+            console.log(response.data);
         })
         .catch(error => {
             return console.error('ERROR FETCHING API DATA -', error);
         })
 
-        return res.redirect('/');
+        return res.redirect('/user/profile');
     },
 
     addPoints7500: async (req, res, next) => {
@@ -94,13 +87,13 @@ const usersController = {
             }
         })
         .then(response => {
-            console.log(`RESULT:${response.data}`);
+            console.log(response.data);
         })
         .catch(error => {
             return console.error('ERROR FETCHING API DATA -', error);
         })
 
-        return res.redirect('/');
+        return res.redirect('/user/profile');
     }
 }
 
