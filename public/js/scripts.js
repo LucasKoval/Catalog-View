@@ -87,9 +87,12 @@ function darkMode() {
     const theme = document.querySelector(".theme");
     body.classList.toggle("dark-mode");
     theme.classList.toggle("dark-mode");
+    console.log('DarkMode click');
 }
 
-function darkTheme() {
-    const theme = document.querySelector(".theme");
-    theme.classList.toggle("dark-mode");
+// Show History
+function showHistory() {
+    const history = document.querySelector(".history");
+    history.classList.toggle("visually-hidden");
+    console.log('history click');
 }

@@ -8,8 +8,7 @@ const productsController = require('../controllers/productsController');
 
 
 //----------* PRODUCTS ROUTES *----------//
-router.get('/', productsController.index);
-router.get('/search', productsController.search);        
+router.get('/', productsController.index);      
 router.get('/:id', productsController.redeemProduct);
 /* router.post('/reddem', productsController.redeemProduct); */            
          

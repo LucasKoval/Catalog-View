@@ -1,75 +1,29 @@
 <header class="fixed-top sticky-top bg-white theme shadow">
+    
     <nav class="navbar navbar-light">
+        
         <div class="container-fluid">
             
             <a href="/" class="navbar-brand">
-                <img src="images\logo.svg" alt="logo">
+                <img src="/images\logo.svg" alt="logo">
             </a>
             
             <span class="d-flex">
                 
-                <span class="bg-gray-400 p-1 ps-3 rounded-pill fw-bold me-3" style="color: black;"><%= user.points %> <img src="images\icons\coin.svg" alt="coin"></span>
+                <span class="bg-gray-400 p-1 ps-3 rounded-pill fw-bold me-3" style="color: black;"><%= user.points %> <img src="/images\icons\coin.svg" alt="coin"></span>
         
                 <div class="btn-group">
+                    
                     <button type="button" class="btn btn-light"><%= user.name %></button>
+                    
                     <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split me-3" data-bs-toggle="dropdown" aria-expanded="false">
                       <span class="visually-hidden">Toggle Dropdown</span>
                     </button>
+                    
                     <ul class="dropdown-menu">
                         
                         <li>
-                            <a class="dropdown-item" href="#">Profile</a>
-                        </li>
-                        
-                        <li>
-                            <button type="button" class="dropdown-item modal-trigger" data-bs-toggle="modal" data-bs-target="#myModal">Add points</button>
-                            <div class="modal">
-                                <div class="modal-dialog">
-                                    <div class="modal-content shadow">
-                                        
-                                        <div class="modal-header">
-                                            <h4 class="modal-title ps-2 pe-2">How many points do you want to add?</h4>
-                                        </div>
-
-                                        <div class="modal-body d-flex justify-content-around pb-0 align-items-end">
-                                            <span>
-                                                <img src="images\icons\coin.svg" alt="coin">
-                                            </span>
-                                            <span>
-                                                <img src="images\icons\coin.svg" alt="coin">
-                                            </span>
-                                            <span>
-                                                <img src="images\icons\coin.svg" alt="coin">
-                                            </span>
-                                        </div>
-
-                                        <div class="modal-body d-flex justify-content-around pt-0 align-items-start">
-                                            <form action="/user/points/1000" method="POST" enctype="multipart/form-data"> 
-                                                <button type="submit" class="btn btn-warning fw-bold ps-3 pe-3 pt-2 pb-2">1000</button>
-                                            </form>
-        
-                                            <form action="/user/points/5000" method="POST" enctype="multipart/form-data"> 
-                                                <button type="submit" class="btn btn-warning fw-bold ps-3 pe-3 pt-2 pb-2">5000</button>
-                                            </form>
-        
-                                            <form action="/user/points/7500" method="POST" enctype="multipart/form-data"> 
-                                                <button type="submit" class="btn btn-warning fw-bold ps-3 pe-3 pt-2 pb-2">7500</button>
-                                            </form>
-                                        </div>
-                                        
-                                        <div class="modal-footer justify-content-center">
-                                            <button type="button" class="btn btn-danger exit ps-4 pe-4" data-bs-dismiss="modal">Cancel</button>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        
-                        <li>
-                            <form action="/user/history" method="GET" enctype="multipart/form-data"> 
-                                <button type="submit" class="dropdown-item">History</button>
-                            </form>
+                            <a href="/user/profile" class="dropdown-item">My Profile</a>
                         </li>
                         
                         <li>
@@ -81,6 +35,7 @@
                         </li>
 
                     </ul>
+
                 </div>
 
                 <button onclick="darkMode()" style="border-radius: 50%; background-color: #F8F9FA;" class="p-0">
@@ -89,5 +44,7 @@
 
             </span>
         </div>
+
     </nav>    
+    
 </header>
