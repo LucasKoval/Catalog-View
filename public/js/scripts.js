@@ -78,7 +78,7 @@ window.addEventListener("load",function(){
     exit.addEventListener("click",function(){
         displayNone(modal)
         displayNone(modalContent)
-    });
+    });    
 });
 
 // Dark Mode
@@ -96,3 +96,28 @@ function showHistory() {
     history.classList.toggle("visually-hidden");
     console.log('history click');
 }
+
+// Alert
+function showAlert() {
+    const alert = document.querySelector('.alert')
+    alert.classList.remove("visually-hidden");
+}
+function closeAlert() {
+    const alert = document.querySelector('.alert')
+    alert.classList.add("visually-hidden");
+}
+
+/*
+// Filter
+function filter() {
+    const lowestCostFilter = document.querySelector("div.lowest-cost-filter");
+    const highestCostFilter = document.querySelector("div.highest-cost-filter");
+    const mostRecent = document.querySelector("#most-recent");
+    const lowestPrice = document.querySelector("#lowest-price");
+    const highestPrice = document.querySelector("#highest-price");
+
+    lowestCostFilter.innerHTML = '<% const lowestCost = products.sort((x, y) => { return x.cost - y.cost }); %>';
+    highestCostFilter.innerHTML = '<% const highestCost = lowestCost.reverse(); %>';
+}
+*/
+

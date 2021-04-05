@@ -36,7 +36,11 @@ const usersController = {
             return console.error('ERROR FETCHING API DATA -', error);
         })
 
-        res.render('users/profile', { user, history });
+        const totalSpent = history.reduce((acum, current) => {
+            return acum += Number(current.cost)
+        }, 0);
+
+        res.render('users/profile', { user, history, totalSpent });
     },
 
     addPoints1000: async (req, res, next) => {
