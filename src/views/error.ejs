@@ -1,3 +1,38 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+    
+    <%- include('./partials/head.ejs', {title: 'Error!'}) %>
+   
+    <body>
+        
+        <header class="fixed-top sticky-top bg-white shadow">
+            <nav class="navbar navbar-light">
+                <div class="container-fluid">
+                    <a href="/" class="navbar-brand">
+                        <img src="/images\logo.svg" alt="logo">
+                    </a>
+                </div>
+            </nav>    
+        </header>
+
+        <div>
+            
+            <div class="d-flex justify-content-center">
+                <img src="/images/error.jpg" alt="error">
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <div>
+                    <h1><%= message %> (<%= error.status %>)</h1>
+                    <h2>Error trying to access to: <b><%= path %></b></h2>
+                    <pre><%= error.stack %></pre>
+                </div>
+            </div>
+            
+        </div>
+            
+        <%- include('./partials/footer.ejs') %>
+        
+    </body>
+
+</html>

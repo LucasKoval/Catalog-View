@@ -22,21 +22,26 @@ main {
 .bg-gray-400 {
   background-color: #e5e5e5;
 }
+
 .banner-text {
   font-size: 6vw;
   color: white;
 }
+
 .top-60 {
   top: 60% !important;
 }
+
 .page-button {
   border-radius: 50% !important;
   color: var(--secondary);
 }
+
 .sort-button:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
+
 .history-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 10px rgba(13, 202, 240, 0.6) !important;
@@ -54,10 +59,12 @@ main {
   justify-content: center;
   align-items: center;
 }
+
 .modal-header {
   background: #34495e;
   color: #fff;
 }
+
 .modal .modal-body {
   height: 85px;
   justify-content: center;
@@ -167,5 +174,5 @@ input {
 }
 
 input:hover {
-  background-color: #e9ecef i !important;
+  background-color: #e9ecef !important;
 }

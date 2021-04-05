@@ -101,6 +101,5 @@ const usersController = {
     }
 }
 
-
 //----------* EXPORTS CONTROLLER *----------//
 module.exports = usersController;
