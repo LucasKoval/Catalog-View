@@ -24,7 +24,9 @@
                 </div>
 
                 <div class="container d-flex justify-content-center my-3">
+                    
                     <button type="button" class="btn btn-info modal-trigger" data-bs-toggle="modal" data-bs-target="#myModal">Add points</button>
+                    
                     <div class="modal">
                         <div class="modal-dialog">
                             <div class="modal-content shadow">
@@ -83,9 +85,11 @@
             </div>
 
             <div class="history row align-items-center justify-content-evenly visually-hidden">
+                
                 <div class="justify-content-center mb-1">
                     <h3 class="text-center">Total points spent: <%= totalSpent %> <img src="/images\icons\coin.svg" alt="coin"></h3>
                 </div>
+                
                 <% for (product of history) { %>
                     
                     <div class="card p-3 m-3 shadow custom-card history-card" style="width: 18rem;">
@@ -100,6 +104,7 @@
                     </div>
 
                 <% } %>
+                
             </div>
             
             <div class="d-flex justify-content-center mt-5">

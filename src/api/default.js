@@ -14,6 +14,5 @@ const defaults = {
     }
 };
 
-
 //----------* EXPORTS DEFAULTS *----------//
 module.exports = defaults;
