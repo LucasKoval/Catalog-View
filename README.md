@@ -1,10 +1,10 @@
-# `Aerolab Coding Challenge (2021)`
+# Aerolab Coding Challenge (2021)
 
 ## `APP URL:`
 
 https://aerolab-challenge-lkdev.herokuapp.com/
 
-## `Available Script`
+## `Available Scripts:`
 
 In the project directory, you can run:
 
@@ -23,10 +23,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will not reload if you make edits.\
 
-## `Author:` Lucas Koval | Full Stack Developer
+## `Author:`
+
+## Lucas Koval | Full Stack Developer
 
 Contact:
 
-- Portfolio: https://lucaskovaldev.com/
-- LinkedIn: https://www.linkedin.com/in/lucaskoval/
-- GitHub: https://github.com/LucasKoval
+- Portfolio: [https://lucaskovaldev.com/](https://lucaskovaldev.com/)
+- LinkedIn: [https://www.linkedin.com/in/lucaskoval/](https://www.linkedin.com/in/lucaskoval/)
+- GitHub: [https://github.com/LucasKoval](https://github.com/LucasKoval)
