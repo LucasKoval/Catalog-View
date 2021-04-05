@@ -11,8 +11,7 @@ const productsController = require('../controllers/productsController');
 router.get('/', productsController.index);                       // Render the Homepage
 router.get('/lowest-cost', productsController.filterLowest);     // Sort products by cost in ascending order
 router.get('/highest-cost', productsController.filterHighest);   // Sort products by cost in descending order
-router.get('/:id', productsController.redeemProduct);            // Redeem the selected product
-/* router.post('/reddem', productsController.redeemProduct); */            
+router.get('/:id', productsController.redeemProduct);            // Redeem the selected product    
          
 
 //----------* EXPORTS ROUTER *----------//
