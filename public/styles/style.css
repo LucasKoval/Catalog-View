@@ -33,10 +33,18 @@ main {
   border-radius: 50% !important;
   color: var(--secondary);
 }
+.sort-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+.history-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 10px rgba(13, 202, 240, 0.6) !important;
+}
 
 /*=== Dark Mode ===*/
 .dark-mode {
-  background-color: #34495e !important; /* #1f1d1c - #34495e */
+  background-color: #34495e !important;
   transition: background 1s;
   color: white;
 }
@@ -55,6 +63,16 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+/*=== Alert ===*/
+.alert {
+  position: absolute;
+  width: 28%;
+  text-align: center;
+  top: 4px;
+  padding: 14px;
+  left: 35%;
 }
 
 /*=== Cards ===*/
@@ -124,6 +142,10 @@ main {
 .move-up {
   transform: translateY(-15px);
   box-shadow: 0 15px 16px rgba(0, 0, 0, 0.2);
+}
+
+.division {
+  border-top: 1.5px solid rgba(0, 0, 0, 0.125) !important;
 }
 
 /*====================/

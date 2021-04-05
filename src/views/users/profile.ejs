@@ -20,7 +20,7 @@
                 </div>
     
                 <div class="justify-content-center mb-1">
-                    <h3 class="">Points: <%= user.points %> <img src="/images\icons\coin.svg" alt="coin"></h3>
+                    <h3 class="">Available points: <%= user.points %> <img src="/images\icons\coin.svg" alt="coin"></h3>
                 </div>
 
                 <div class="container d-flex justify-content-center my-3">
@@ -76,20 +76,23 @@
                 
             </div>
             
-            <div class="container d-flex justify-content-center dropdown mt-3 mb-5">
+            <div class="container d-flex justify-content-center dropdown mt-3 mb-4">
                 <button onclick="showHistory()" class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                   History
                 </button>
             </div>
 
             <div class="history row align-items-center justify-content-evenly visually-hidden">
+                <div class="justify-content-center mb-1">
+                    <h3 class="text-center">Total points spent: <%= totalSpent %> <img src="/images\icons\coin.svg" alt="coin"></h3>
+                </div>
                 <% for (product of history) { %>
                     
-                    <div class="card p-3 m-3 shadow custom-card" style="width: 18rem;">
+                    <div class="card p-3 m-3 shadow custom-card history-card" style="width: 18rem;">
                         
-                        <img src="<%= product.img.hdUrl %>" alt="image" class="">
+                        <img src="<%= product.img.hdUrl %>" alt="image" class="mb-3">
                         
-                        <div class="card-body text-center">
+                        <div class="card-body text-center division pb-2">
                             <h5 class="card-text" style="color: black;"><%= product.name %></h5>
                             <h5 class="card-text text-black-50">Points spent: <%= product.cost %> <img src="/images\icons\coin.svg" alt="coin" width="10%"></h5>
                         </div>

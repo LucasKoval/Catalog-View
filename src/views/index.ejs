@@ -19,7 +19,7 @@
       <ul class="nav nav-pills justify-content-between mt-5 theme mb-3" style="border-bottom: 1.5px solid rgba(0, 0, 0, 0.125);">
                   
         <li class="nav-item">
-          <p class="nav-link products-number-high"><%= firstProducts.length %> of <%= products.length %> products</p>
+          <p class="nav-link products-number-high mb-0"><%= products.length/2 %> of <%= products.length %> products</p>
         </li>
 
         <li class="nav-item">
@@ -27,19 +27,19 @@
         </li>
 
         <li class="nav-item">
-          <p class="nav-link">Sort by:</p>
+          <p class="nav-link mb-0">Sort by:</p>
         </li>
 
-        <li class="nav-item mx-2">
-          <a class="nav-link active bg-info bg-gradient rounded-pill" aria-current="page" href="#">Most recent</a>
+        <li class="nav-item mx-2 mb-3">
+          <a href="/" class="nav-link active bg-info bg-gradient rounded-pill sort-button" aria-current="page" id="most-recent">Most recent</a>
         </li>
 
-        <li class="nav-item mx-2">
-          <a class="nav-link disabled bg-light bg-gradient rounded-pill" href="#" tabindex="-1" aria-disabled="true">Lowest price</a>
+        <li class="nav-item mx-2 mb-3">
+          <a href="/lowest-cost" class="nav-link active bg-info bg-gradient rounded-pill sort-button" tabindex="-1" aria-disabled="true" id="lowest-price">Lowest price</a>
         </li>
 
-        <li class="nav-item mx-2">
-          <a class="nav-link disabled bg-light bg-gradient rounded-pill" href="#" tabindex="-1" aria-disabled="true">Highest price</a>
+        <li class="nav-item mx-2 mb-3">
+          <a href="/highest-cost" class="nav-link active bg-info bg-gradient rounded-pill sort-button" tabindex="-1" aria-disabled="true" id="highest-price">Highest price</a>
         </li>
 
         <li class="nav-item">
@@ -49,7 +49,7 @@
         <li class="nav-item">
           <nav aria-label="Page navigation">
             <ul class="pagination">
-              
+
               <li class="page-item prev-button-high visually-hidden">
                 <a class="page-link page-button previous" aria-label="Previous">
                   <span aria-hidden="true" style="padding-left: 2px; padding-right: 2px;">
@@ -74,26 +74,26 @@
         
       <div class="row align-items-center justify-content-evenly" id="firstProducts">
         
-        <% for (product of firstProducts) { %>
+        <% for( let i = 0; i < products.length/2; i++ ) { %>
           
           <div class="card p-3 m-3 shadow custom-card allowedItems" style="width: 18rem;">
             
-            <% if (product.cost > user.points) { %>
+            <% if (products[i].cost > user.points) { %>
               
-              <img src="<%= product.img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
-              <span class="p-1 ps-3 rounded-pill fw-bold no-shop-icon">You need <%= product.cost - user.points %> <img src="images\icons\coin.svg" alt="coin"></span>
+              <img src="<%= products[i].img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
+              <span class="p-1 ps-3 rounded-pill fw-bold no-shop-icon">You need <%= products[i].cost - user.points %> <img src="images\icons\coin.svg" alt="coin"></span>
             
               <ul class="list-group list-group-flush">
                 <li class="list-group-item pb-0 ps-0">
-                  <h5 class="card-title" style="color: black;"><%= product.name %></h5>
-                  <p class="card-text text-black-50"><%= product.category %></p>
+                  <h5 class="card-title" style="color: black;"><%= products[i].name %></h5>
+                  <p class="card-text text-black-50"><%= products[i].category %></p>
                 </li>
               </ul>
 
               <div class="card-body redeem text-center custom-overlay-red bg-overlay visually-hidden">
                 
                 <p class="card-text">
-                  <div class="p-1 ps-2 rounded-pill cost"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
+                  <div class="p-1 ps-2 rounded-pill cost"><%= products[i].cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
                 </p>
 
                 <p>
@@ -106,30 +106,30 @@
               
               <div class="allowedItems">
                 
-                <img src="<%= product.img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
+                <img src="<%= products[i].img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
                 <img src="/images/icons/buy-blue.svg" class="shop-icon" alt="shop">
 
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush division">
                   <li class="list-group-item pb-0 ps-0">
-                    <h5 class="card-title" style="color: black;"><%= product.name %></h5>
-                    <p class="card-text text-black-50"><%= product.category %></p>
+                    <h5 class="card-title" style="color: black;"><%= products[i].name %></h5>
+                    <p class="card-text text-black-50"><%= products[i].category %></p>
                   </li>
                 </ul>
 
                 <div class="card-body redeem text-center custom-overlay-blue bg-overlay visually-hidden">
                   
                   <p class="card-text">
-                    <div class="p-1 ps-2 rounded-pill cost"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
+                    <div class="p-1 ps-2 rounded-pill cost"><%= products[i].cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
                   </p>
 
                   <p>
-                    <form action="/<%= product._id %>" method="GET" enctype="multipart/form-data">
+                    <form action="/<%= products[i]._id %>" method="GET" enctype="multipart/form-data">
                     <!-- <form action="/redeem" method="POST" enctype="multipart/form-data">
-                      <input type="text" name="_id" id="_id" value="<%= product._id %>" hidden>
-                      <input type="text" name="name" id="name" value="<%= product.name %>" hidden>
-                      <input type="number" name="cost" id="cost" value="<%= product.cost %>" hidden>
-                      <input type="text" name="category" id="category" value="<%= product.category %>" hidden> -->
-                      <input type="submit" value="Redeem now" class="btn btn-light rounded-pill text-center " style="width: 90%;">
+                      <input type="text" name="_id" id="_id" value="<%= products[i]._id %>" hidden>
+                      <input type="text" name="name" id="name" value="<%= products[i].name %>" hidden>
+                      <input type="number" name="cost" id="cost" value="<%= products[i].cost %>" hidden>
+                      <input type="text" name="category" id="category" value="<%= products[i].category %>" hidden> -->
+                      <input type="submit" value="Redeem now" onclick="showAlert()" class="btn btn-light rounded-pill text-center redeem-button" style="width: 90%;">
                     </form>
                   </p>
 
@@ -147,26 +147,26 @@
 
       <div class="row align-items-center justify-content-evenly visually-hidden" id="lastProducts">
         
-        <% for (product of lastProducts) { %>
+        <% for( let i = products.length/2; i < products.length; i++ ) { %>
           
           <div class="card p-3 m-3 shadow custom-card allowedItems" style="width: 18rem;">
             
-            <% if (product.cost > user.points) { %>
+            <% if (products[i].cost > user.points) { %>
               
-              <img src="<%= product.img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
-              <span class="p-1 ps-3 rounded-pill fw-bold no-shop-icon">You need <%= product.cost - user.points %> <img src="images\icons\coin.svg" alt="coin"></span>
+              <img src="<%= products[i].img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
+              <span class="p-1 ps-3 rounded-pill fw-bold no-shop-icon">You need <%= products[i].cost - user.points %> <img src="images\icons\coin.svg" alt="coin"></span>
             
               <ul class="list-group list-group-flush">
                 <li class="list-group-item pb-0 ps-0">
-                  <h5 class="card-title" style="color: black;"><%= product.name %></h5>
-                  <p class="card-text text-black-50"><%= product.category %></p>
+                  <h5 class="card-title" style="color: black;"><%= products[i].name %></h5>
+                  <p class="card-text text-black-50"><%= products[i].category %></p>
                 </li>
               </ul>
 
               <div class="card-body redeem text-center custom-overlay-red bg-overlay visually-hidden">
                 
                 <p class="card-text">
-                  <div class="p-1 ps-2 rounded-pill cost"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
+                  <div class="p-1 ps-2 rounded-pill cost"><%= products[i].cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
                 </p>
                 
                 <p>
@@ -179,30 +179,30 @@
               
               <div class="allowedItems">
                 
-                <img src="<%= product.img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
+                <img src="<%= products[i].img.hdUrl %>" class="card-img-top mb-2" alt="Nombre">
                 <img src="/images/icons/buy-blue.svg" class="shop-icon" alt="shop">
 
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush division">
                   <li class="list-group-item pb-0 ps-0">
-                    <h5 class="card-title" style="color: black;"><%= product.name %></h5>
-                    <p class="card-text text-black-50"><%= product.category %></p>
+                    <h5 class="card-title" style="color: black;"><%= products[i].name %></h5>
+                    <p class="card-text text-black-50"><%= products[i].category %></p>
                   </li>
                 </ul>
 
                 <div class="card-body redeem text-center custom-overlay-blue bg-overlay visually-hidden">
 
                   <p class="card-text">
-                    <div class="p-1 ps-2 rounded-pill cost"><%= product.cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
+                    <div class="p-1 ps-2 rounded-pill cost"><%= products[i].cost %> <img src="images\icons\coin.svg" alt="coin" style="width: 1.1em;"></div>
                   </p>
 
                   <p>
-                    <form action="/<%= product._id %>" method="POST" enctype="multipart/form-data">
+                    <form action="/<%= products[i]._id %>" method="POST" enctype="multipart/form-data">
                       <!-- <form action="/redeem" method="POST" enctype="multipart/form-data">
-                      <input type="text" name="_id" id="_id" value="<%= product._id %>" hidden>
-                      <input type="text" name="name" id="name" value="<%= product.name %>" hidden>
-                      <input type="number" name="cost" id="cost" value="<%= product.cost %>" hidden>
-                      <input type="text" name="category" id="category" value="<%= product.category %>" hidden> -->
-                      <input type="submit" value="Redeem now" class="btn btn-light rounded-pill text-center " style="width: 90%;">
+                      <input type="text" name="_id" id="_id" value="<%= products[i]._id %>" hidden>
+                      <input type="text" name="name" id="name" value="<%= products[i].name %>" hidden>
+                      <input type="number" name="cost" id="cost" value="<%= products[i].cost %>" hidden>
+                      <input type="text" name="category" id="category" value="<%= products[i].category %>" hidden> -->
+                      <input type="submit" value="Redeem now" class="btn btn-light rounded-pill text-center" style="width: 90%;">
                     </form>
                   </p>
 
@@ -221,7 +221,7 @@
       <ul class="nav nav-pills justify-content-between mt-5 theme mb-3" style="border-bottom: 1.5px solid rgba(0, 0, 0, 0.125);">
         
         <li class="nav-item">
-          <p class="nav-link products-number-low"><%= firstProducts.length %> of <%= products.length %> products</p>
+          <p class="nav-link products-number-low"><%= products.length/2 %> of <%= products.length %> products</p>
         </li>
 
         <li class="nav-item">
