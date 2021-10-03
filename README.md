@@ -1,12 +1,14 @@
-# Aerolab Coding Challenge (2021)
+# Catalog View App (2021)
 
-## `APP URL:`
+Developed by [Lucas Koval](https://lucaskovaldev.com/) for the Aerolab coding challenge 2021.
 
-https://aerolab-challenge-lkdev.herokuapp.com/
+## `APP URL`
 
-## `Available Scripts:`
+[https://catalog-view-lkdev.herokuapp.com/](https://catalog-view-lkdev.herokuapp.com/)
 
-In the project directory, you can run:
+## `Available Scripts`
+
+In the project root directory, you can run:
 
 ### `npm run dev`
 
@@ -16,14 +18,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm start`
+### `npm run build` then `npm start`
 
 Runs the app in the production mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will not reload if you make edits.\
-
-## `Author:`
+## `Author`
 
 ## Lucas Koval | Full Stack Developer
 
